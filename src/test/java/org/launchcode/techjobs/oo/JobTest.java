@@ -59,33 +59,16 @@ public class JobTest {
        Job jobA = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                new PositionType("Quality control"), new CoreCompetency("Persistence"));
        assertTrue(jobA.toString().contains(
-               "ID: " + jobA.getId() + "\n" +
-               "Name: " + jobA.getName() + "\n" +
-               "Employer: " + jobA.getEmployer() + "\n" +
-               "Location: " + jobA.getLocation() + "\n" +
-               "Position Type: " + jobA.getPositionType() + "\n" +
-               "Core Competency: " + jobA.getCoreCompetency() + "\n"));
+               "ID: " + jobA.getId() + System.lineSeparator() +
+               "Name: " + jobA.getName() + System.lineSeparator() +
+               "Employer: " + jobA.getEmployer() + System.lineSeparator() +
+               "Location: " + jobA.getLocation() + System.lineSeparator() +
+               "Position Type: " + jobA.getPositionType() + System.lineSeparator() +
+               "Core Competency: " + jobA.getCoreCompetency() + System.lineSeparator()));
    }
-   
+
    @Test
     public void testToStringHandlesEmptyField() {
-       Job jobA = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
-               new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-       if (jobA.getName().toString().isEmpty()) {
-           jobA.setName("Data not available");
-       }
-       if (jobA.getEmployer().toString().isEmpty()) {
-           jobA.getEmployer().setValue("Data not available");
-       }
-       if (jobA.getLocation().toString().isEmpty()) {
-           jobA.getLocation().setValue("Data not available");
-       }
-       if (jobA.getPositionType().toString().isEmpty()) {
-           jobA.getPositionType().setValue("Data not available");
-       }
-       if (jobA.getCoreCompetency().toString().isEmpty()) {
-           jobA.getCoreCompetency().setValue("Data not available");
-       }
    }
 }

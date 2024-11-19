@@ -16,29 +16,29 @@ public class Job {
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
-    public Job () {
+    public Job() {
         id = nextId;
         nextId++;
     }
 
-        public Job (String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this ();
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-    };
+    }
 
     @Override
     public String toString() {
         return System.lineSeparator() +
-                "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n" +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + (name.isEmpty() ? "Data not available" : name) + System.lineSeparator() +
+                "Employer: " + (employer.getValue().isEmpty() ? "Data not available" : employer.getValue()) + System.lineSeparator() +
+                "Location: " + (location.getValue().isEmpty() ? "Data not available" : location.getValue()) + System.lineSeparator() +
+                "Position Type: " + (positionType.getValue().isEmpty() ? "Data not available" : positionType.getValue()) + System.lineSeparator() +
+                "Core Competency: " + (coreCompetency.getValue().isEmpty() ? "Data not available" : coreCompetency.getValue()) + System.lineSeparator() +
                 System.lineSeparator();
     }
 // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -61,9 +61,9 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
-   public String getName() {
-       return name;
-   }
+    public String getName() {
+        return name;
+    }
 
     public void setName(String name) {
         this.name = name;
