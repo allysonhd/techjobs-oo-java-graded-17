@@ -67,12 +67,16 @@ public class JobTest {
                "Core Competency: " + jobA.getCoreCompetency() + System.lineSeparator()));
    }
 
-   @Test
+    @Test
     public void testToStringHandlesEmptyField() {
-       Job jobA = new Job("", new Employer("ACME"), new Location("Desert"),
-               new PositionType("Quality control"), new CoreCompetency("Persistence"));
-       String result = jobA.getName().toString();
-
-       assertEquals("Data not available", result);
-   }
+        Job jobA = new Job("", new Employer(""), new Location(""),
+                new PositionType(""), new CoreCompetency(""));
+        assertTrue(jobA.toString().contains(
+                "ID: " + jobA.getId() + System.lineSeparator() +
+                        "Name: " + "Data not available" + System.lineSeparator() +
+                        "Employer: " + "Data not available" + System.lineSeparator() +
+                        "Location: " + "Data not available" + System.lineSeparator() +
+                        "Position Type: " + "Data not available" + System.lineSeparator() +
+                        "Core Competency: " + "Data not available" + System.lineSeparator()));
+    }
 }
