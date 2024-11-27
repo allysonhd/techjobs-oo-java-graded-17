@@ -38,7 +38,7 @@ public class Job {
                 "Employer: " + (employer.getValue().isEmpty() ? "Data not available" : employer.getValue()) + System.lineSeparator() +
                 "Location: " + (location.getValue().isEmpty() ? "Data not available" : location.getValue()) + System.lineSeparator() +
                 "Position Type: " + (positionType.getValue().isEmpty() ? "Data not available" : positionType.getValue()) + System.lineSeparator() +
-                "Core Competency: " + (coreCompetency.getValue().isEmpty() ? "Data not available" : coreCompetency.getValue()) + System.lineSeparator() +
+                "Core Competency: " + (coreCompetency.getValue().isEmpty() ? "Data not available" : coreCompetency.getValue()) +
                 System.lineSeparator();
     }
 // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
