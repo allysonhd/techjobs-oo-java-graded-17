@@ -22,10 +22,10 @@ public class JobTest {
               new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertEquals("Product tester", jobA.getName());
-        assertEquals("ACME", jobA.getEmployer().toString());
-        assertEquals("Desert", jobA.getLocation().toString());
-        assertEquals("Quality control", jobA.getPositionType().toString());
-        assertEquals("Persistence", jobA.getCoreCompetency().toString());
+        assertEquals("ACME", jobA.getEmployer().getValue());
+        assertEquals("Desert", jobA.getLocation().getValue());
+        assertEquals("Quality control", jobA.getPositionType().getValue());
+        assertEquals("Persistence", jobA.getCoreCompetency().getValue());
 
         assertTrue(jobA.getName() instanceof String);
         assertTrue(jobA.getEmployer() instanceof Employer);
